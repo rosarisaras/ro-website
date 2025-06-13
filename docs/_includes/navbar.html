@@ -1,0 +1,48 @@
+<nav class="sticky top-0 z-50 bg-white shadow-md" x-data="{ open: false }">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <a href="{{ '/' | relative_url }}" class="text-2xl font-quicksand font-bold text-gray-800 hover:text-rose transition">
+          Rosari Sarasvaty
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {% for item in site.data.navigation.main %}
+          <a href="{{ item.url | relative_url }}" 
+             class="font-muli text-gray-700 hover:text-rose transition {% if page.url == item.url %}text-rose font-semibold{% endif %}">
+            {{ item.title }}
+          </a>
+        {% endfor %}
+        <a href="#contact" class="bg-rose text-white px-4 py-2 rounded-full font-muli hover:bg-rose-light transition">
+          Contact
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button @click="open = !open" class="text-gray-700 hover:text-rose focus:outline-none">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path x-show="!open" d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path x-show="open" d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div x-show="open" @click.away="open = false" class="md:hidden pb-4">
+      {% for item in site.data.navigation.main %}
+        <a href="{{ item.url | relative_url }}" 
+           class="block py-2 font-muli text-gray-700 hover:text-rose transition {% if page.url == item.url %}text-rose font-semibold{% endif %}">
+          {{ item.title }}
+        </a>
+      {% endfor %}
+      <a href="#contact" class="block mt-2 bg-rose text-white px-4 py-2 rounded-full font-muli text-center hover:bg-rose-light transition">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>

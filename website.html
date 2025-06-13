@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosari Sarasvaty – Award‑Winning Dance Educator</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --clr-dark: #2f2f2f;
+      --clr-light: #ffffff;
+      --clr-accent: #f9c9c1;
+      --clr-primary: #c4202a;
+      --clr-gradient: linear-gradient(135deg, #f9c9c1 0%, #f4a6a0 100%);
+      --content-max: 1100px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      color: var(--clr-dark); 
+      background: var(--clr-light); 
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    
+    a { 
+      color: inherit; 
+      text-decoration: none; 
+    }
+    
+    img { 
+      max-width: 100%; 
+      display: block; 
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- Shared Utilities ---------- */
+    .visually-hidden { 
+      position: absolute; 
+      width: 1px; 
+      height: 1px; 
+      overflow: hidden; 
+      clip: rect(0 0 0 0); 
+      white-space: nowrap; 
+      clip-path: inset(50%); 
+    }
+    
+    .container { 
+      max-width: var(--content-max); 
+      margin: 0 auto; 
+      padding: 0 1.5rem; 
+    }
+    
+    .btn-outline { 
+      display: inline-block; 
+      padding: .8rem 2.5rem; 
+      border: 2px solid var(--clr-dark); 
+      background: transparent; 
+      font-size: .875rem; 
+      letter-spacing: 1px; 
+      text-transform: uppercase; 
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      transition: all .3s ease;
+      cursor: pointer;
+    }
+    
+    .btn-outline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--clr-dark);
+      transition: left .3s ease;
+      z-index: -1;
+    }
+    
+    .btn-outline:hover::before {
+      left: 0;
+    }
+    
+    .btn-outline:hover { 
+      color: var(--clr-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      background: var(--clr-dark);
+      color: var(--clr-light);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    nav.scrolled {
+      background: rgba(47, 47, 47, 0.95);
+      box-shadow: var(--shadow);
+    }
+    
+    .nav-inner { 
+      max-width: var(--content-max); 
+      margin: 0 auto; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: .75rem 1.5rem; 
+    }
+    
+    .logo { 
+      font-size: 1rem; 
+      font-weight: 600; 
+      letter-spacing: 2px; 
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--clr-accent);
+    }
+    
+    .nav-menu { 
+      list-style: none; 
+      display: flex; 
+      gap: 2rem; 
+    }
+    
+    .nav-menu a { 
+      font-size: .8rem; 
+      letter-spacing: 1px; 
+      text-transform: uppercase; 
+      opacity: .85;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--clr-accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-menu a:hover { 
+      color: var(--clr-accent);
+      opacity: 1;
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--clr-light);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--clr-dark);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-menu li {
+        padding: 0.5rem 1.5rem;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ---------- Hero Banner ---------- */
+    .hero { 
+      background: var(--clr-gradient);
+      text-align: center; 
+      padding: 8rem 1.5rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 { 
+      font-size: clamp(2rem, 5vw, 3.5rem); 
+      font-weight: 700; 
+      margin-bottom: 1.5rem; 
+      letter-spacing: .5px;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .hero .btn-outline {
+      animation: fadeInUp 1s ease 0.9s both;
+      border-color: var(--clr-dark);
+    }
+
+    /* ---------- Section Headings ---------- */
+    .section { 
+      padding: 6rem 0; 
+    }
+    
+    .section-title { 
+      text-align: center; 
+      font-size: .875rem; 
+      letter-spacing: 3px; 
+      text-transform: uppercase; 
+      color: var(--clr-primary); 
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .section-heading { 
+      text-align: center; 
+      font-size: 2.5rem; 
+      font-weight: 700; 
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, var(--clr-dark) 0%, var(--clr-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---------- Artist Statement ---------- */
+    .statement-grid { 
+      display: grid; 
+      gap: 4rem; 
+      align-items: center; 
+    }
+    
+    @media (min-width: 800px) { 
+      .statement-grid { 
+        grid-template-columns: 1fr 1.2fr; 
+      } 
+    }
+    
+    .statement-grid img { 
+      border-radius: 12px; 
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .image-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(249, 201, 193, 0.2) 0%, rgba(196, 32, 42, 0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover::after {
+      opacity: 1;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+    
+    .statement-grid p { 
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* ---------- Testimonials ---------- */
+    .testimonials {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 5rem 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--clr-accent);
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--clr-primary);
+    }
+
+    /* ---------- Press Links ---------- */
+    .press-links { 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem; 
+      margin-top: 2rem; 
+    }
+    
+    .press-links a { 
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    /* ---------- Video ---------- */
+    .video-wrapper { 
+      position: relative; 
+      padding-top: 56.25%; 
+      max-width: 1000px; 
+      margin: 3rem auto 0; 
+      border-radius: 12px; 
+      overflow: hidden; 
+      box-shadow: var(--shadow-hover);
+      transition: all 0.3s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    
+    .video-wrapper iframe { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+    }
+
+    /* ---------- Contact ---------- */
+    #contact .container { 
+      max-width: 900px; 
+    }
+    
+    .contact-grid { 
+      display: grid; 
+      gap: 3rem; 
+    }
+    
+    @media (min-width: 780px) { 
+      .contact-grid { 
+        grid-template-columns: 1fr 1fr; 
+      } 
+    }
+    
+    form { 
+      display: grid; 
+      gap: 1.5rem; 
+    }
+    
+    input, textarea { 
+      width: 100%; 
+      padding: 1rem 1.25rem; 
+      border: 2px solid #e9ecef; 
+      border-radius: 8px; 
+      font-family: inherit; 
+      font-size: .95rem;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--clr-accent);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(249, 201, 193, 0.2);
+    }
+    
+    textarea { 
+      resize: vertical; 
+      min-height: 150px; 
+    }
+    
+    button.btn-submit { 
+      border: 2px solid var(--clr-dark); 
+      background: transparent; 
+      color: var(--clr-dark); 
+      padding: 1rem 2.5rem; 
+      font-size: .875rem; 
+      letter-spacing: 1px; 
+      text-transform: uppercase; 
+      cursor: pointer; 
+      transition: all .3s ease;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button.btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--clr-dark);
+      transition: left .3s ease;
+      z-index: -1;
+    }
+
+    button.btn-submit:hover::before {
+      left: 0;
+    }
+    
+    button.btn-submit:hover { 
+      color: var(--clr-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--clr-dark);
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---------- Footer ---------- */
+    footer { 
+      background: var(--clr-dark); 
+      color: var(--clr-light); 
+      text-align: center; 
+      font-size: .8rem; 
+      padding: 2rem 1rem; 
+      letter-spacing: .5px;
+    }
+
+    /* ---------- Success Message ---------- */
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 1px solid #c3e6cb;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    /* ---------- Loading Spinner ---------- */
+    .loading {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid var(--clr-primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- ################ NAV ################ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">Rosari Sarasvaty</a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ################ HERO ################ -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Award‑Winning Dance Educator</h1>
+        <p class="hero-subtitle">Celebrating diverse identities through the art of movement</p>
+        <a href="#press" class="btn-outline">— View Press —</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ################ ABOUT ################ -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-title animate-on-scroll">Artist Statement</p>
+        <div class="statement-grid animate-on-scroll">
+          <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1515165562835-6a9042f6e677?auto=format&fit=crop&w=800&q=80" alt="Rosari Sarasvaty portrait" />
+          </div>
+          <div>
+            <p>As an immigrant, a woman of color, and an artist, my work is grounded in the exploration and expression of one's identities and experiences. Dance is my medium. Through dance I tell stories that are complex, deeply personal, and universally resonant—celebrating diverse identities and experience.</p>
+            <p>I strive to create spaces through my work that allow for self‑reflection, connection, and dialogue. By weaving together elements from ballet, modern dance, and traditional Indonesian dance, I create contemporary work that reflects both my multicultural background and the stories of those who inspire me.</p>
+            <p>Through my work, I hope to amplify voices and encourage audiences to embrace their own identities and the stories of those around them. My goal is to find solidarity in the collective stories we all share.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ################ TESTIMONIALS ################ -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <p class="section-title animate-on-scroll">What Students Say</p>
+        <h2 class="section-heading animate-on-scroll">Testimonials</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card animate-on-scroll">
+            <p class="testimonial-text">Rosari's classes transformed my understanding of dance. She creates such a welcoming space where everyone can explore their own artistic voice while honoring cultural traditions.</p>
+            <p class="testimonial-author">— Maria Chen, Student</p>
+          </div>
+          <div class="testimonial-card animate-on-scroll">
+            <p class="testimonial-text">Working with Rosari opened my eyes to the power of storytelling through movement. Her approach to blending different dance traditions is truly inspiring and revolutionary.</p>
+            <p class="testimonial-author">— James Rodriguez, Collaborator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ################ PRESS ################ -->
+    <section id="press" class="section" style="padding-top:3rem;">
+      <div class="container" style="text-align:center;">
+        <p class="section-title animate-on-scroll">Media Coverage</p>
+        <h2 class="section-heading animate-on-scroll">Press</h2>
+        <small class="animate-on-scroll">Featured in leading dance publications</small>
+        <div class="press-links animate-on-scroll">
+          <a class="btn-outline" href="#">— NDEO Blog —</a>
+          <a class="btn-outline" href="#">— JCE Review (12/08) —</a>
+          <a class="btn-outline" href="#">— JCE Review (10/09) —</a>
+          <a class="btn-outline" href="#">— Dance Teacher Magazine —</a>
+          <a class="btn-outline" href="#">— Dance Enthusiast —</a>
+          <a class="btn-outline" href="#">— JCE Review (04/22) —</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ################ VIDEO ################ -->
+    <section id="work" class="section" style="padding-top:0;">
+      <div class="container" style="text-align:center;">
+        <p class="section-title animate-on-scroll">Featured Performance</p>
+        <h2 class="section-heading animate-on-scroll">Alive</h2>
+        <small class="animate-on-scroll">A powerful exploration of identity and resilience</small>
+      </div>
+      <div class="video-wrapper animate-on-scroll">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rosari Sarasvaty Alive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- ################ CONTACT ################ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="section-title animate-on-scroll">Get In Touch</p>
+        <h2 class="section-heading animate-on-scroll">Contact Me</h2>
+        <div class="contact-grid">
+                      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="animate-on-scroll">
+            <div class="success-message" id="successMessage">
+              Thank you for your message! I'll get back to you soon.
+            </div>
+            <label class="visually-hidden" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your Name" required />
+            <label class="visually-hidden" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Your Email*" required />
+            <label class="visually-hidden" for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-submit">
+              <span class="btn-text">— Send Message —</span>
+              <div class="loading" id="loadingSpinner"></div>
+            </button>
+          </form>
+          <div class="contact-info animate-on-scroll">
+            <h3>Questions or Comments</h3>
+            <p>Send me a message or ask me a question using this form. I will do my best to get back to you soon! I'm always excited to connect with fellow dancers, students, and anyone interested in the transformative power of movement.</p>
+            <p><strong>Rosari Sarasvaty</strong><br>
+            Award-Winning Dance Educator<br>
+            Multicultural Movement Artist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ################ FOOTER ################ -->
+  <footer>
+    &copy; <span id="year"></span> Rosari Sarasvaty • All Rights Reserved • Celebrating Identity Through Dance
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Form submission with animation
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const btnText = document.querySelector('.btn-text');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading state
+      btnText.style.display = 'none';
+      loadingSpinner.style.display = 'block';
+      
+      // Simulate form submission (replace with actual form handling)
+      setTimeout(() => {
+        // Hide loading state
+        btnText.style.display = 'block';
+        loadingSpinner.style.display = 'none';
+        
+        // Show success message
+        successMessage.classList.add('show');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 5000);
+      }, 2000);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

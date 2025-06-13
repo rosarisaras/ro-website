@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Rosari Sarasvaty</title>
+    <meta name="description" content="Thank you for contacting Rosari Sarasvaty.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .thank-you-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .thank-you-content {
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+        
+        .thank-you-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .checkmark::after {
+            content: '✓';
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Rosari Sarasvaty</div>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#press">Press</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="thank-you-content">
+                <div class="checkmark"></div>
+                <h1>Thank You!</h1>
+                <p>Your message has been successfully sent. I'll get back to you as soon as possible.</p>
+                <a href="index.html" class="btn">Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rosari Sarasvaty - All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/rosssaari/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Auto redirect after 5 seconds -->
+    <script>
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 5000);
+    </script>
+</body>
+</html>

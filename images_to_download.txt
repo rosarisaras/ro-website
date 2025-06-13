@@ -1,0 +1,17 @@
+# Images to Download from GoDaddy Website Builder
+
+## Main Images:
+1. Profile/Hero Image:
+   https://img1.wsimg.com/isteam/ip/8a25ba46-0b0d-4842-a820-153e2102cf39/Rosari%20-06.png
+   
+2. Favicon:
+   https://img1.wsimg.com/isteam/ip/8a25ba46-0b0d-4842-a820-153e2102cf39/favicon/87eda3be-878e-4f15-a5ee-9bed6a3cbf99.jpg
+
+## Note:
+These images are hosted on GoDaddy's image server. To use them in the GitHub Pages site:
+1. Download the images using wget or curl
+2. Save them in an 'images' folder in your repository
+3. Update the image URLs in index.html to point to the local files
+
+Example download command:
+wget -O images/rosari-profile.png "https://img1.wsimg.com/isteam/ip/8a25ba46-0b0d-4842-a820-153e2102cf39/Rosari%20-06.png"

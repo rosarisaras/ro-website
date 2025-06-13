@@ -1,0 +1,97 @@
+---
+layout: default
+---
+<div class="gradient-bg py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-quicksand font-bold text-white text-center">
+      {{ page.title }}
+    </h1>
+    {% if page.premiere %}
+      <p class="text-xl text-white/90 text-center mt-4 font-light">
+        Premiered {{ page.premiere | date: "%B %Y" }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="max-w-6xl mx-auto px-4 py-12">
+  <!-- Hero Image -->
+  {% if page.hero_image %}
+  <figure class="mb-12">
+    <img src="{{ page.hero_image | relative_url }}" 
+         alt="{{ page.hero_alt | default: page.title }}"
+         class="w-full rounded-lg shadow-lg"
+         loading="lazy">
+    {% if page.hero_caption %}
+      <figcaption class="text-center text-gray-600 mt-4 italic">{{ page.hero_caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
+  
+  <!-- Synopsis -->
+  <div class="max-w-4xl mx-auto mb-12">
+    <h2 class="text-2xl font-quicksand font-bold mb-4">Synopsis</h2>
+    <div class="prose prose-lg max-w-none">
+      {{ content }}
+    </div>
+  </div>
+  
+  <!-- Video Embed -->
+  {% if page.video_url %}
+  <div class="max-w-4xl mx-auto mb-12">
+    <h2 class="text-2xl font-quicksand font-bold mb-4">Performance Video</h2>
+    <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+      <iframe src="{{ page.video_url }}" 
+              title="{{ page.title }} performance video"
+              class="absolute top-0 left-0 w-full h-full"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Additional Images Gallery -->
+  {% if page.gallery %}
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-2xl font-quicksand font-bold mb-4">Gallery</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for image in page.gallery %}
+        <figure class="overflow-hidden rounded-lg shadow-lg">
+          <img src="{{ image.url | relative_url }}" 
+               alt="{{ image.alt | default: page.title }}"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+               loading="lazy">
+          {% if image.caption %}
+            <figcaption class="p-2 text-sm text-gray-600 italic">{{ image.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Performance Details -->
+  {% if page.performances %}
+  <div class="max-w-4xl mx-auto mt-12">
+    <h2 class="text-2xl font-quicksand font-bold mb-4">Performance History</h2>
+    <ul class="space-y-2">
+      {% for performance in page.performances %}
+        <li class="text-gray-700">
+          <span class="font-semibold">{{ performance.date | date: "%B %Y" }}</span> - 
+          {{ performance.venue }}{% if performance.location %}, {{ performance.location }}{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  <!-- Back to Work -->
+  <div class="max-w-4xl mx-auto mt-12 text-center">
+    <a href="{{ '/work/' | relative_url }}" class="inline-flex items-center text-rose hover:text-rose-light transition">
+      <i class="fas fa-arrow-left mr-2"></i> Back to All Work
+    </a>
+  </div>
+</div>

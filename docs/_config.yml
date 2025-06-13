@@ -1,0 +1,37 @@
+title: "Rosari Sarasvaty"
+description: "Award-Winning Indonesian-American Dance Educator & Choreographer"
+baseurl: "/ro_website"
+url: "https://username.github.io"
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+permalink: pretty
+
+# SEO and social
+author:
+  name: "Rosari Sarasvaty"
+  email: "contact@rosarisarasvaty.com"
+
+social:
+  instagram: "https://www.instagram.com/rosari.sarasvaty"
+
+# Collections for work projects
+collections:
+  work:
+    output: true
+    permalink: /work/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "work"
+    values:
+      layout: "project"
