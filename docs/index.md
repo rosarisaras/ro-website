@@ -55,7 +55,7 @@ title: Home
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl font-quicksand font-bold text-center mb-8">Featured Work</h2>
     <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      <iframe src="https://player.vimeo.com/video/1025960881?h=29d370263c" 
               title="Featured performance video"
               class="absolute top-0 left-0 w-full h-full"
               frameborder="0" 
@@ -65,7 +65,7 @@ title: Home
       </iframe>
     </div>
     <p class="text-center mt-4 text-gray-600">
-      <em>"Alive" - Premiered at The Kitchen, NYC</em>
+      <em>"Social Affairs" - Commissioned piece performed at Capital A Fair, Bismarck ND</em>
     </p>
   </div>
 </section>

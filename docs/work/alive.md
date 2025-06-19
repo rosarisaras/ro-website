@@ -4,7 +4,7 @@ title: "Alive"
 premiere: 2023-03-15
 hero_image: /assets/img/alive-hero.webp
 hero_alt: "Dancers performing Alive at The Kitchen NYC"
-video_url: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+video_url: ""
 performances:
   - date: 2023-03-15
     venue: "The Kitchen"
