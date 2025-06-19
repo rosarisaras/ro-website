@@ -21,11 +21,3 @@ subtitle: Dance Artist • Educator • Cultural Bridge Builder
          class="w-full rounded-lg shadow-lg">
   </div>
 </div>
-
-## Artist Statement
-
-As an immigrant, a woman of color, and an artist, my work is grounded in the exploration and expression of one's identity and experiences. Dance is my medium. Through dance I tell stories that are complex, deeply personal, and universally resonant - celebrating diverse identities and experience.
-
-I strive to create spaces through my work that allow for self-reflection, connection, and dialogue. By weaving together elements from ballet, modern dance, and traditional Indonesian dance, I create contemporary work that reflects both my multicultural background and the stories of those who inspire me.
-
-Through my work, I hope to amplify voices and encourage audiences to embrace their own identities and the stories of those around them. My goal is to find solidarity in the collective stories we all share.

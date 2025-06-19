@@ -47,6 +47,3 @@ title: Home
   </div>
 </section>
 
-
-<!-- Contact Form -->
-{% include contact-form.html %}
