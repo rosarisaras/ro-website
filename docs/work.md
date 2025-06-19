@@ -1,102 +1,94 @@
 ---
 layout: page
 title: Work
-subtitle: Choreography & Performance
 ---
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  <!-- Alive -->
-  <a href="{{ '/work/alive/' | relative_url }}" class="group block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-    <div class="relative h-64 bg-gray-200 overflow-hidden">
-      <img src="{{ '/assets/img/alive-hero.webp' | relative_url }}" 
-           alt="Alive performance" 
-           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-           loading="lazy"
-           onerror="this.style.display='none'">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-        <h3 class="text-xl font-quicksand font-bold">Alive</h3>
-        <p class="text-sm opacity-90">2023</p>
-      </div>
-    </div>
-    <div class="p-4">
-      <p class="text-gray-700 line-clamp-3">
-        A powerful exploration of resilience and rebirth, combining traditional Javanese dance with contemporary movement to tell stories of survival and transformation.
-      </p>
-      <span class="inline-block mt-3 text-rose font-medium group-hover:text-rose-light transition">
-        View Project <i class="fas fa-arrow-right ml-1"></i>
-      </span>
-    </div>
-  </a>
+<style>
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
 
+.work-item {
+  text-align: center;
+}
+
+.work-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.work-item img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work-item p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.work-item .photo-credit {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="work-grid">
   <!-- One Take -->
-  <a href="{{ '/work/one-take/' | relative_url }}" class="group block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-    <div class="relative h-64 bg-gray-200 overflow-hidden">
-      <img src="{{ '/assets/img/one-take-hero.webp' | relative_url }}" 
-           alt="One Take performance" 
-           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-           loading="lazy"
-           onerror="this.style.display='none'">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-        <h3 class="text-xl font-quicksand font-bold">One Take</h3>
-        <p class="text-sm opacity-90">2022</p>
-      </div>
-    </div>
-    <div class="p-4">
-      <p class="text-gray-700 line-clamp-3">
-        An improvisational work that captures the spontaneity and authenticity of unedited movement, challenging performers to embrace vulnerability and presence.
-      </p>
-      <span class="inline-block mt-3 text-rose font-medium group-hover:text-rose-light transition">
-        View Project <i class="fas fa-arrow-right ml-1"></i>
-      </span>
-    </div>
-  </a>
-
-  <!-- Social Affairs -->
-  <a href="{{ '/work/social-affairs/' | relative_url }}" class="group block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-    <div class="relative h-64 bg-gray-200 overflow-hidden">
-      <img src="{{ '/assets/img/social-affairs-hero.webp' | relative_url }}" 
-           alt="Social Affairs performance" 
-           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-           loading="lazy"
-           onerror="this.style.display='none'">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-        <h3 class="text-xl font-quicksand font-bold">Social Affairs</h3>
-        <p class="text-sm opacity-90">2022</p>
-      </div>
-    </div>
-    <div class="p-4">
-      <p class="text-gray-700 line-clamp-3">
-        A collaborative piece examining social dynamics and cultural exchange through the lens of Indonesian court dance and American social dance forms.
-      </p>
-      <span class="inline-block mt-3 text-rose font-medium group-hover:text-rose-light transition">
-        View Project <i class="fas fa-arrow-right ml-1"></i>
-      </span>
-    </div>
-  </a>
-
-  <!-- Placeholder for more works -->
-  <div class="group block overflow-hidden rounded-lg shadow-lg bg-gray-100 p-8 flex items-center justify-center">
-    <div class="text-center">
-      <i class="fas fa-plus-circle text-4xl text-gray-400 mb-4"></i>
-      <p class="text-gray-600">More works coming soon</p>
-    </div>
+  <div class="work-item">
+    <h3>One Take</h3>
+    <img src="{{ '/assets/img/one-take-photo.png' | relative_url }}" alt="One Take performance">
+    <p>Original dance piece created for Dance+, October 2024, Bismarck, ND</p>
+    <p>Restaged at Deer Widow event, November 2024, Bismarck, ND</p>
+    <p class="photo-credit">Photo: Northern Plains Dance</p>
   </div>
-</div>
-
-## Commissions & Collaborations
-
-I am available for:
-- Site-specific performances
-- Educational residencies
-- Choreographic commissions
-- Workshop facilitation
-- Cross-cultural collaborations
-
-<div class="text-center mt-8">
-  <a href="#contact" class="inline-block bg-rose text-white px-6 py-3 rounded-full font-medium hover:bg-rose-light transition">
-    Inquire About Collaborations
-  </a>
+  
+  <!-- Social Affairs -->
+  <div class="work-item">
+    <h3>Social Affairs</h3>
+    <div class="video-container">
+      <iframe src="https://player.vimeo.com/video/1025960881?h=29d370263c&autoplay=0&loop=0&muted=0" 
+              frameborder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+    <p>Commissioned piece performed at Capital A Fair, Juneteenth Event, Music in Missouri and Family River Day Walk Bismarck, North Dakota.</p>
+    <p class="photo-credit">Video: Jakob Olson</p>
+  </div>
+  
+  <!-- Alive -->
+  <div class="work-item">
+    <h3>Alive</h3>
+    <img src="{{ '/assets/img/alive-photo.png' | relative_url }}" alt="Alive performance">
+    <p>Original dance piece created for Dance+, October 2023.</p>
+    <p>Restaged at Indonesian Night Event by NDAAACI, May 2024.</p>
+    <p class="photo-credit">Photo: Northern Plains Dance, DeAnne Adair</p>
+  </div>
 </div>
