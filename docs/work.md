@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Work
+layout: work
+title: Choreographic Work
 ---
 
 <style>
@@ -16,38 +16,40 @@ title: Work
 }
 
 .work-item h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .work-item img {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto 20px;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .work-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .work-item .photo-credit {
-  font-style: italic;
-  color: #666;
   font-size: 0.9rem;
+  color: #999;
+  margin-top: 20px;
 }
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 75%;
   height: 0;
   overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
 }
 
 .video-container iframe {
