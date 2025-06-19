@@ -11,6 +11,11 @@ title: Home
         <h1 class="text-4xl md:text-6xl font-quicksand font-bold text-white mb-4">
           Award-Winning Dance Educator
         </h1>
+        <div class="mt-8">
+          <a href="{{ '/work/' | relative_url }}" class="inline-block bg-white text-rose px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition text-lg">
+            Work
+          </a>
+        </div>
       </div>
       <div class="flex justify-center">
         <img src="{{ '/assets/img/rosari-profile.png' | relative_url }}" 
