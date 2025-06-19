@@ -6,4 +6,4 @@ main:
   - title: "Work"
     url: "/work/"
   - title: "Press"
-    url: "/#press"
+    url: "/press/"
