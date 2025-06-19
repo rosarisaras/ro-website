@@ -11,15 +11,9 @@ title: Home
         <h1 class="text-4xl md:text-6xl font-quicksand font-bold text-white mb-4">
           Award-Winning Dance Educator
         </h1>
-        <p class="text-xl text-white/90 mb-8 font-light">
-          Indonesian-American choreographer bridging cultures through movement
-        </p>
-        <div class="space-x-4">
-          <a href="{{ '/work/' | relative_url }}" class="inline-block bg-white text-rose px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">
-            View My Work
-          </a>
-          <a href="#contact" class="inline-block border-2 border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-rose transition">
-            Get in Touch
+        <div class="mt-8">
+          <a href="#press" class="inline-block bg-white text-rose px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition text-lg">
+            Featured in Press
           </a>
         </div>
       </div>
@@ -38,13 +32,13 @@ title: Home
     <h2 class="text-3xl font-quicksand font-bold text-center mb-8">Artist Statement</h2>
     <div class="prose prose-lg max-w-none text-gray-700">
       <p>
-        As an Indonesian-American dance artist, I create work that bridges my Indonesian heritage with contemporary American dance forms. My choreography explores themes of cultural identity, displacement, and the universal language of movement that transcends borders.
+        As an immigrant, a woman of color, and an artist, my work is grounded in the exploration and expression of one's identity and experiences. Dance is my medium. Through dance I tell stories that are complex, deeply personal, and universally resonant - celebrating diverse identities and experience.
       </p>
       <p>
-        Through my practice, I seek to challenge Western perspectives on Indonesian dance while honoring the traditional forms that shaped my artistic foundation. Each piece I create is a conversation between past and present, tradition and innovation, East and West.
+        I strive to create spaces through my work that allow for self-reflection, connection, and dialogue. By weaving together elements from ballet, modern dance, and traditional Indonesian dance, I create contemporary work that reflects both my multicultural background and the stories of those who inspire me.
       </p>
       <p>
-        My teaching philosophy centers on creating inclusive spaces where dancers of all backgrounds can explore movement as a tool for personal and cultural expression. I believe dance has the power to build bridges between communities and foster cross-cultural understanding.
+        Through my work, I hope to amplify voices and encourage audiences to embrace their own identities and the stories of those around them. My goal is to find solidarity in the collective stories we all share.
       </p>
     </div>
   </div>
@@ -55,7 +49,7 @@ title: Home
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl font-quicksand font-bold text-center mb-8">Featured Work</h2>
     <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-      <iframe src="https://player.vimeo.com/video/1025960881?h=29d370263c" 
+      <iframe src="https://www.youtube.com/embed/Ee_5Jnic8SA" 
               title="Featured performance video"
               class="absolute top-0 left-0 w-full h-full"
               frameborder="0" 
@@ -65,7 +59,7 @@ title: Home
       </iframe>
     </div>
     <p class="text-center mt-4 text-gray-600">
-      <em>"Social Affairs" - Commissioned piece performed at Capital A Fair, Bismarck ND</em>
+      <em>Featured performance</em>
     </p>
   </div>
 </section>
