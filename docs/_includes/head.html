@@ -9,6 +9,11 @@
   <!-- Alpine.js for interactivity (optional) -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   
+  <!-- Modern Font Imports -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- Custom Tailwind Config -->
   <script>
     tailwind.config = {
@@ -22,15 +27,13 @@
           },
           fontFamily: {
             'quicksand': ['Quicksand', 'sans-serif'],
-            'muli': ['Muli', 'sans-serif'],
+            'inter': ['Inter', 'sans-serif'],
           }
         }
       }
     }
   </script>
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Muli:wght@200;300;400;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -100,24 +103,31 @@
       background-size: contain;
       background-position: right center;
       background-color: #2d2d2d; /* Match the dark gray of the image */
+      min-height: 100vh;
     }
     
     .about-bg-centered {
       background-size: contain;
       background-position: right center;
+      min-height: 100vh;
     }
     
     /* Media queries for larger screens */
     @media (min-width: 768px) {
       .hero-bg-full {
-        background-size: auto 85%;
+        background-size: auto 95%;
         background-position: right center;
       }
       
       .about-bg-centered {
-        background-size: auto 90%;
+        background-size: auto 100%;
         background-position: right center;
       }
+    }
+    
+    /* Update body font to Inter for modern look */
+    body {
+      font-family: 'Inter', sans-serif;
     }
   </style>
 </head>

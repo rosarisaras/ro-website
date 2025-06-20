@@ -12,7 +12,7 @@
       <div class="hidden md:flex items-center space-x-8">
         {% for item in site.data.navigation.main %}
           <a href="{{ item.url | relative_url }}" 
-             class="font-muli text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
+             class="font-inter text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
             {{ item.title }}
           </a>
         {% endfor %}
@@ -33,7 +33,7 @@
     <div x-show="open" @click.away="open = false" class="md:hidden pb-4">
       {% for item in site.data.navigation.main %}
         <a href="{{ item.url | relative_url }}" 
-           class="block py-2 font-muli text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
+           class="block py-2 font-inter text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
           {{ item.title }}
         </a>
       {% endfor %}
