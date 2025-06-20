@@ -41,9 +41,6 @@ title: Home
               loading="lazy">
       </iframe>
     </div>
-    <p class="text-center mt-6 text-gray-400 text-lg fade-in">
-      <em>A journey through Indonesian contemporary dance</em>
-    </p>
   </div>
 </section>
 
