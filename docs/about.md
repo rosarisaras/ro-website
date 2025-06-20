@@ -21,7 +21,7 @@ title: About
     
     <!-- Image -->
     <div class="relative overflow-hidden">
-      <div class="h-full parallax-bg grayscale" style="background-image: url('{{ '/assets/img/rosari-profile.png' | relative_url }}');">
+      <div class="h-full parallax-bg grayscale about-bg-centered" style="background-image: url('{{ '/assets/img/rosari-profile.png' | relative_url }}');">
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
     </div>

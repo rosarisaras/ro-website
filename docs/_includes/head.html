@@ -94,5 +94,29 @@
       background-color: rgba(0,0,0,0.95) !important;
       backdrop-filter: blur(10px);
     }
+    
+    /* Custom background positioning */
+    .hero-bg-full {
+      background-size: contain;
+      background-position: center center;
+    }
+    
+    .about-bg-centered {
+      background-size: contain;
+      background-position: center center;
+    }
+    
+    /* Media queries for larger screens */
+    @media (min-width: 768px) {
+      .hero-bg-full {
+        background-size: auto 100%;
+        background-position: center center;
+      }
+      
+      .about-bg-centered {
+        background-size: auto 90%;
+        background-position: center center;
+      }
+    }
   </style>
 </head>
