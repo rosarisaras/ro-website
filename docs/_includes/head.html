@@ -98,21 +98,34 @@
       backdrop-filter: blur(10px);
     }
     
-    /* Custom background positioning */
+    /* Custom background positioning - Mobile First */
     .hero-bg-full {
-      background-size: contain;
-      background-position: right center;
+      background-size: cover;
+      background-position: center top;
       background-color: #2d2d2d; /* Match the dark gray of the image */
       min-height: 100vh;
     }
     
     .about-bg-centered {
-      background-size: contain;
-      background-position: right center;
+      background-size: cover;
+      background-position: center center;
       min-height: 100vh;
     }
     
-    /* Media queries for larger screens */
+    /* Tablet screens */
+    @media (min-width: 640px) {
+      .hero-bg-full {
+        background-size: contain;
+        background-position: center center;
+      }
+      
+      .about-bg-centered {
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+    
+    /* Desktop screens */
     @media (min-width: 768px) {
       .hero-bg-full {
         background-size: auto 95%;
@@ -122,6 +135,13 @@
       .about-bg-centered {
         background-size: auto 100%;
         background-position: right center;
+      }
+    }
+    
+    /* Mobile text adjustments */
+    @media (max-width: 767px) {
+      .parallax-overlay {
+        background: rgba(0, 0, 0, 0.7) !important;
       }
     }
     
