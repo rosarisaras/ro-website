@@ -4,44 +4,70 @@ title: Choreographic Work
 ---
 
 <style>
+.work-page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
+  gap: 60px;
+  margin-top: 60px;
 }
 
 .work-item {
   text-align: center;
+  background: #111;
+  padding: 30px;
+  border: 1px solid #222;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-item:hover {
+  border-color: #D4A574;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
 }
 
 .work-item h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  color: #fff;
 }
 
 .work-item img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 5px;
   margin-bottom: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.work-item:hover img {
+  filter: grayscale(0%);
 }
 
 .work-item p {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #666;
+  line-height: 1.8;
+  color: #ccc;
   margin-bottom: 10px;
 }
 
 .work-item .photo-credit {
-  font-size: 0.9rem;
-  color: #999;
+  font-size: 0.85rem;
+  color: #666;
   margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .video-container {
@@ -50,6 +76,7 @@ title: Choreographic Work
   height: 0;
   overflow: hidden;
   margin-bottom: 20px;
+  background: #000;
 }
 
 .video-container iframe {

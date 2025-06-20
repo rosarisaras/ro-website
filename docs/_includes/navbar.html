@@ -1,9 +1,9 @@
-<nav class="sticky top-0 z-50 bg-gray-800 shadow-md" x-data="{ open: false }">
+<nav class="sticky top-0 z-50 bg-transparent shadow-md transition-all duration-300" x-data="{ open: false }" id="navbar">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <!-- Logo/Brand -->
       <div class="flex items-center">
-        <a href="{{ '/' | relative_url }}" class="text-2xl font-quicksand font-bold text-white hover:text-rose transition">
+        <a href="{{ '/' | relative_url }}" class="text-2xl font-quicksand font-bold text-white hover:text-gold transition">
           Rosari Sarasvaty
         </a>
       </div>
@@ -12,7 +12,7 @@
       <div class="hidden md:flex items-center space-x-8">
         {% for item in site.data.navigation.main %}
           <a href="{{ item.url | relative_url }}" 
-             class="font-muli text-white hover:text-rose transition {% if page.url == item.url %}text-rose font-semibold{% endif %}">
+             class="font-muli text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
             {{ item.title }}
           </a>
         {% endfor %}
@@ -20,7 +20,7 @@
       
       <!-- Mobile Menu Button -->
       <div class="md:hidden">
-        <button @click="open = !open" class="text-white hover:text-rose focus:outline-none">
+        <button @click="open = !open" class="text-white hover:text-gold focus:outline-none">
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path x-show="!open" d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path x-show="open" d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -33,10 +33,26 @@
     <div x-show="open" @click.away="open = false" class="md:hidden pb-4">
       {% for item in site.data.navigation.main %}
         <a href="{{ item.url | relative_url }}" 
-           class="block py-2 font-muli text-white hover:text-rose transition {% if page.url == item.url %}text-rose font-semibold{% endif %}">
+           class="block py-2 font-muli text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">
           {{ item.title }}
         </a>
       {% endfor %}
     </div>
   </div>
 </nav>
+
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      navbar.classList.remove('bg-transparent');
+      navbar.classList.add('bg-black');
+    } else {
+      navbar.classList.remove('scrolled');
+      navbar.classList.add('bg-transparent');
+      navbar.classList.remove('bg-black');
+    }
+  });
+</script>

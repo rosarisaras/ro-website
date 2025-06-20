@@ -15,8 +15,10 @@
       theme: {
         extend: {
           colors: {
-            'rose': '#ffc7ba',
-            'rose-light': '#f9c9c1',
+            'gold': '#D4A574',
+            'gold-light': '#E5B885',
+            'charcoal': '#111111',
+            'smoke': '#222222',
           },
           fontFamily: {
             'quicksand': ['Quicksand', 'sans-serif'],
@@ -39,8 +41,58 @@
   <!-- Custom styles if needed -->
   <style>
     /* Custom styles that can't be done with Tailwind */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    
     .gradient-bg {
-      background: linear-gradient(135deg, #ffc7ba 0%, #f9c9c1 100%);
+      background: #000;
+    }
+    
+    /* Parallax Effects */
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .parallax-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
+    }
+    
+    /* Grayscale filters */
+    .grayscale {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+    
+    .grayscale:hover {
+      filter: grayscale(0%);
+    }
+    
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Navigation transitions */
+    nav.scrolled {
+      background-color: rgba(0,0,0,0.95) !important;
+      backdrop-filter: blur(10px);
     }
   </style>
 </head>

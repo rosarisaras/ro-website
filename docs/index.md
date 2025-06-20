@@ -4,34 +4,34 @@ title: Home
 ---
 
 <!-- Hero Section -->
-<section class="gradient-bg py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="text-center md:text-left">
-        <h1 class="text-4xl md:text-6xl font-quicksand font-bold text-white mb-4">
-          Award-Winning Dance Educator
-        </h1>
-        <div class="mt-8">
-          <a href="{{ '/work/' | relative_url }}" class="inline-block bg-white text-rose px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition text-lg">
-            Work
-          </a>
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <img src="{{ '/assets/img/rosari-profile.png' | relative_url }}" 
-             alt="Rosari Sarasvaty portrait" 
-             class="rounded-lg shadow-2xl max-w-full h-auto">
+<section class="relative min-h-screen flex items-center parallax-bg" style="background-image: url('{{ '/assets/img/rosari-profile.png' | relative_url }}');">
+  <div class="absolute inset-0 parallax-overlay"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-4 w-full">
+    <div class="text-center md:text-left max-w-2xl">
+      <h1 class="text-5xl md:text-7xl font-quicksand font-bold text-white mb-6 tracking-wide fade-in">
+        Award-Winning<br>Dance Educator
+      </h1>
+      <p class="text-xl text-gray-300 mb-8 fade-in" style="animation-delay: 0.2s;">
+        Bridging cultures through movement and artistic expression
+      </p>
+      <div class="mt-8 fade-in" style="animation-delay: 0.4s;">
+        <a href="{{ '/work/' | relative_url }}" class="inline-block bg-gold text-black px-10 py-4 font-bold uppercase tracking-wider hover:bg-gold-light transform hover:scale-105 transition duration-300">
+          Explore My Work
+        </a>
       </div>
     </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <i class="fas fa-chevron-down text-2xl"></i>
   </div>
 </section>
 
 
 <!-- Featured Video -->
-<section class="bg-gray-50 py-16">
+<section class="bg-black py-24">
   <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl font-quicksand font-bold text-center mb-8">Featured Work</h2>
-    <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
+    <h2 class="text-4xl font-quicksand font-bold text-center mb-12 text-white tracking-wide fade-in">Featured Performance</h2>
+    <div class="relative pb-[56.25%] h-0 overflow-hidden shadow-2xl fade-in">
       <iframe src="https://www.youtube.com/embed/Ee_5Jnic8SA" 
               title="Featured performance video"
               class="absolute top-0 left-0 w-full h-full"
@@ -41,9 +41,30 @@ title: Home
               loading="lazy">
       </iframe>
     </div>
-    <p class="text-center mt-4 text-gray-600">
-      <em>Featured performance</em>
+    <p class="text-center mt-6 text-gray-400 text-lg fade-in">
+      <em>A journey through Indonesian contemporary dance</em>
     </p>
   </div>
 </section>
+
+<script>
+  // Fade in animation on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
 

@@ -1,9 +1,15 @@
 ---
-layout: page
-title: Contact Me
+layout: default
+title: Contact
 ---
 
-<style>
+<div class="bg-black text-white min-h-screen py-20">
+  <div class="max-w-2xl mx-auto px-4">
+    <h1 class="text-5xl font-quicksand font-light text-center mb-4 tracking-wide">Get in Touch</h1>
+    <p class="text-center mb-12 text-gray-400 text-lg">Send me a message or ask me a question using this form.</p>
+    
+    <div class="bg-white text-black p-8 md:p-12 shadow-2xl">
+      <style>
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -42,27 +48,26 @@ title: Contact Me
 }
 
 .btn {
-    background-color: #ffc7ba;
-    color: #333;
-    padding: 12px 30px;
+    background-color: #D4A574;
+    color: #000;
+    padding: 14px 40px;
     border: none;
-    border-radius: 25px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s;
     display: inline-block;
 }
 
 .btn:hover {
-    background-color: #ffb5a7;
-    transform: translateY(-2px);
+    background-color: #E5B885;
+    transform: scale(1.05);
 }
 </style>
 
-<p style="text-align: center; margin-bottom: 30px;">Get in Touch! Send me a message or ask me a question using this form.</p>
-
-<form class="contact-form" action="https://formsubmit.co/sarasvatyrosari@gmail.com" method="POST">
+      <form class="contact-form" action="https://formsubmit.co/sarasvatyrosari@gmail.com" method="POST">
     <!-- FormSubmit Configuration -->
     <input type="hidden" name="_subject" value="New message from RosariSarasvaty.com">
     <input type="hidden" name="_next" value="https://mrposch.github.io/ro-website/thank-you/">
@@ -83,5 +88,8 @@ title: Contact Me
     </div>
     <div class="form-group" style="text-align: center;">
         <button type="submit" class="btn">Send Message</button>
+        </div>
+      </form>
     </div>
-</form>
+  </div>
+</div>
