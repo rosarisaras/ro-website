@@ -1,0 +1,21 @@
+{
+  "name": "ro_website",
+  "version": "1.0.0",
+  "description": "A clean, responsive website for Rosari Sarasvaty, an award-winning dance educator based in Bismarck, ND. Built for easy deployment on GitHub Pages.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "build-css": "tailwindcss -i ./docs/assets/css/tailwind.css -o ./docs/assets/css/output.css --minify",
+    "watch-css": "tailwindcss -i ./docs/assets/css/tailwind.css -o ./docs/assets/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "tailwindcss": "^4.1.10"
+  }
+}
