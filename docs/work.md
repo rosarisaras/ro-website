@@ -10,11 +10,38 @@ title: Choreographic Work
   min-height: 100vh;
 }
 
+/* Responsive title styling */
+.work-title {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 640px) {
+  .work-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 768px) {
+  .work-title {
+    font-size: 3rem;
+    letter-spacing: 4px;
+  }
+}
+
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   margin-top: 60px;
+}
+
+@media (min-width: 640px) {
+  .work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px;
+  }
 }
 
 .work-item {
