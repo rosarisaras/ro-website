@@ -6,7 +6,7 @@ title: Home
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center parallax-bg hero-bg-full" style="background-image: url('{{ '/assets/img/about-section-image.jpg' | relative_url }}');">
   <div class="absolute inset-0 parallax-overlay"></div>
-  <div class="relative z-10 max-w-6xl mx-auto px-4 w-full">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full">
     <div class="text-center md:text-left max-w-2xl">
       <h1 class="text-5xl md:text-7xl font-quicksand font-bold text-white mb-6 tracking-wide fade-in">
         Award-Winning<br>Dance Educator
