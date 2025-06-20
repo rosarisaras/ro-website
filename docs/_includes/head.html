@@ -100,16 +100,20 @@
     
     /* Custom background positioning - Mobile First */
     .hero-bg-full {
-      background-size: cover;
-      background-position: center top;
+      background-size: contain;
+      background-position: center center;
       background-color: #2d2d2d; /* Match the dark gray of the image */
       min-height: 100vh;
+      -webkit-background-size: contain;
+      background-attachment: scroll;
     }
     
     .about-bg-centered {
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       min-height: 100vh;
+      -webkit-background-size: contain;
+      background-attachment: scroll;
     }
     
     /* Tablet screens */
@@ -130,11 +134,20 @@
       .hero-bg-full {
         background-size: auto 95%;
         background-position: right center;
+        background-attachment: fixed;
       }
       
       .about-bg-centered {
         background-size: auto 100%;
         background-position: right center;
+        background-attachment: fixed;
+      }
+    }
+    
+    /* iOS specific fixes */
+    @supports (-webkit-touch-callout: none) {
+      .parallax-bg {
+        background-attachment: scroll !important;
       }
     }
     
