@@ -1,7 +1,7 @@
 title: "Rosari Sarasvaty"
 description: "Award-Winning Indonesian-American Dance Educator & Choreographer"
-baseurl: "/ro-website"
-url: "https://rosarisaras.github.io"
+baseurl: ""
+url: "https://www.rosarisarasvaty.com"
 markdown: kramdown
 theme: minima
 plugins:
