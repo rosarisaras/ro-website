@@ -8,7 +8,7 @@ title: About
     <!-- Text Content -->
     <div class="bg-charcoal p-8 md:p-16 flex items-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-quicksand font-light mb-8 tracking-wide">About</h1>
+        <h1 class="text-5xl font-quicksand font-semibold mb-8 tracking-wide">About</h1>
         <p class="mb-6 text-gray-300 leading-relaxed text-lg typewriter">Rosari was named after the Hindu goddess Sarasvati, who is known as the goddess of learning and the arts. As a result, she spent a lot of her time studying and making art.</p>
         
         <p class="mb-6 text-gray-300 leading-relaxed text-lg">In 2022, she graduated from NYU Steinhardt with an MA in Teaching Dance in the Professions: American Ballet Theatre (ABT) Pedagogy. She is an ABT® Certified Teacher and was a class assistant at the ABT Jacqueline Kennedy Onassis School. Additionally, she completed a dance teacher training program at the Mark Morris Dance Center in 2020 and received a Pilates certification through the Club Pilates Teacher Training Program in 2023. From 2020 to 2022, she studied American Modern Dance and Graham Technique at the Martha Graham Dance School. Before working in dance full-time, she was a lawyer and received her law degree from Universitas Pelita Harapan in 2018 and the University of Georgia in 2019.</p>

@@ -11,10 +11,7 @@ title: Home
       <h1 class="text-4xl sm:text-5xl md:text-7xl font-quicksand font-bold text-white mb-6 tracking-wide fade-in">
         Award-Winning<br>Dance Educator
       </h1>
-      <p class="text-xl text-gray-300 mb-8 fade-in" style="animation-delay: 0.2s;">
-        Bridging cultures through movement and artistic expression
-      </p>
-      <div class="mt-8 fade-in" style="animation-delay: 0.4s;">
+      <div class="mt-8 fade-in" style="animation-delay: 0.2s;">
         <a href="{{ '/work/' | relative_url }}" class="inline-block bg-gold text-black px-10 py-4 font-bold uppercase tracking-wider hover:bg-gold-light transform hover:scale-105 transition duration-300">
           Explore My Work
         </a>
