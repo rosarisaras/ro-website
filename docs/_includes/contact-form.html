@@ -5,7 +5,7 @@
     <form action="https://formsubmit.co/{{ site.author.email }}" method="POST" class="space-y-6">
       <!-- FormSubmit Configuration -->
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://mrposch.github.io/ro-website/thank-you/">
+      <input type="hidden" name="_next" value="{{ '/thank-you/' | absolute_url }}">
       <input type="hidden" name="_subject" value="New contact from website">
       
       <!-- Name Field -->

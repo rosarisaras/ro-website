@@ -70,7 +70,7 @@ title: Contact
       <form class="contact-form" action="https://formsubmit.co/sarasvatyrosari@gmail.com" method="POST">
     <!-- FormSubmit Configuration -->
     <input type="hidden" name="_subject" value="New message from RosariSarasvaty.com">
-    <input type="hidden" name="_next" value="https://mrposch.github.io/ro-website/thank-you/">
+    <input type="hidden" name="_next" value="{{ '/thank-you/' | absolute_url }}">
     <input type="hidden" name="_captcha" value="false">
     <input type="text" name="_honey" style="display:none">
     
