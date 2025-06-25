@@ -1,6 +1,6 @@
 # Rosari Sarasvaty - Dance Artist Website
 
-A zero-cost, GitHub Pages-friendly website for award-winning Indonesian-American dance educator and choreographer Rosari Sarasvaty.
+A zero-cost, GitHub Pages-friendly website for award-winning Indonesian dance educator and choreographer Rosari Sarasvaty.
 
 ## Tech Stack
 
