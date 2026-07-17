@@ -6,7 +6,7 @@ export default defineConfig({
   fullyParallel: true,
   reporter: 'list',
   use: {
-    baseURL: 'https://mrposch.github.io/ro-website/',
+    baseURL: 'https://www.rosarisarasvaty.com/',
     trace: 'on-first-retry',
     headless: true,
   },

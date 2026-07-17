@@ -85,7 +85,7 @@ subtitle: Let's Stay in Touch
       For press inquiries, booking requests, or collaboration proposals, 
       please reach out directly via email or use the contact form.
     </p>
-    <a href="#contact" class="inline-block bg-rose text-white px-6 py-3 rounded-full font-medium hover:bg-rose-light transition">
+    <a href="{{ '/contact/' | relative_url }}" class="inline-block bg-rose text-white px-6 py-3 rounded-full font-medium hover:bg-rose-light transition">
       Get in Touch
     </a>
   </div>

@@ -7,7 +7,7 @@ title: Press
   <div class="max-w-6xl mx-auto px-4">
     <!-- Press Section -->
     <section class="mb-20">
-      <h2 class="text-5xl font-quicksand font-light text-center mb-4 tracking-wide">Press</h2>
+      <h1 class="text-5xl font-quicksand font-light text-center mb-4 tracking-wide">Press</h1>
       <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Media coverage and reviews of Rosari's performances and teaching</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for item in site.data.press %}
