@@ -130,6 +130,7 @@ title: Choreographic Work
     <h3>Social Affairs</h3>
     <div class="video-container">
       <iframe src="https://player.vimeo.com/video/1025960881?h=29d370263c&autoplay=0&loop=0&muted=0" 
+              title="Social Affairs performance video"
               frameborder="0" 
               allow="autoplay; fullscreen; picture-in-picture" 
               allowfullscreen>

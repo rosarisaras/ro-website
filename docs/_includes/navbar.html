@@ -20,7 +20,13 @@
       
       <!-- Mobile Menu Button -->
       <div class="md:hidden">
-        <button @click="open = !open" class="text-white hover:text-gold focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
+        <button type="button"
+                @click="open = !open"
+                :aria-expanded="open.toString()"
+                aria-controls="mobile-navigation"
+                class="text-white hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                aria-label="Toggle mobile menu"
+                title="Toggle mobile menu">
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
             <path x-show="!open" d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path x-show="open" d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -30,7 +36,7 @@
     </div>
     
     <!-- Mobile Navigation -->
-    <div x-show="open" @click.away="open = false" class="md:hidden pb-4">
+    <div id="mobile-navigation" x-show="open" @click.away="open = false" class="md:hidden pb-4">
       {% for item in site.data.navigation.main %}
         <a href="{{ item.url | relative_url }}" 
            class="block py-2 font-inter text-white hover:text-gold transition {% if page.url == item.url %}text-gold font-semibold{% endif %}">

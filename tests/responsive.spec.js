@@ -8,7 +8,7 @@ const devices = [
   { name: 'Desktop', viewport: { width: 1920, height: 1080 }, userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' }
 ];
 
-const baseURL = 'https://mrposch.github.io/ro-website/';
+const baseURL = 'https://www.rosarisarasvaty.com/';
 
 devices.forEach(device => {
   test.describe(`Responsive Tests - ${device.name}`, () => {
@@ -44,7 +44,7 @@ devices.forEach(device => {
       
       // Take screenshot for visual comparison
       await page.screenshot({ 
-        path: `screenshots/homepage-${device.name.toLowerCase().replace(' ', '-')}.png`,
+        path: `screenshots/homepage-${device.name.toLowerCase().replace(/\s+/g, '-')}.png`,
         fullPage: false 
       });
     });
@@ -77,7 +77,7 @@ devices.forEach(device => {
       }
       
       await page.screenshot({ 
-        path: `screenshots/about-${device.name.toLowerCase().replace(' ', '-')}.png`,
+        path: `screenshots/about-${device.name.toLowerCase().replace(/\s+/g, '-')}.png`,
         fullPage: false 
       });
     });
